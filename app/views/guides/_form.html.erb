@@ -1,4 +1,4 @@
-<%= form_for(@guide) do |f| %>
+<%= form_for(@guide,:html => { :multipart => true }) do |f| %>
   <% if @guide.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@guide.errors.count, "error") %> prohibited this guide from being saved:</h2>
@@ -18,6 +18,9 @@
   <div class="field">
     <%= f.label :course %><br>
     <%= f.text_area :course %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :image, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit %>

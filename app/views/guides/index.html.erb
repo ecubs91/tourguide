@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>
+      </th>
       <th>Description</th>
       <th>Course</th>
       <th></th>
@@ -14,6 +16,11 @@
   <tbody>
     <% @guides.each do |guide| %>
       <tr>
+        <td>                <a href="/guides/<%= guide.id %>">
+                    <div class="image-photo" style="background-image: url('<%= guide.image.url %>'); width: 150px; background-size: 100%; height: 150px;">
+                    </div>
+                </a>
+        </td>
         <td><%= guide.description %></td>
         <td><%= guide.course %></td>
         <td><%= link_to 'Show', guide %></td>

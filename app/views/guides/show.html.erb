@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+ 	<div class="thumbnail"> 
+      <a href="/guides/<%= @guide.id %>">
+        <div class="image-photo" style="background-image: url('<%= @guide.image.url %>'); width: 150px; background-size: 100%; height: 150px;">
+        </div>
+      </a>
+ 	</div>
 <p>
   <strong>Description:</strong>
   <%= @guide.description %>
@@ -9,6 +15,8 @@
   <strong>Course:</strong>
   <%= @guide.course %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_guide_path(@guide) %> |
 <%= link_to 'Back', guides_path %>
