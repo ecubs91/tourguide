@@ -1,35 +1,25 @@
-<h1>Listing guides</h1>
+<h1>Guides</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>
-      </th>
-      <th>Description</th>
-      <th>Course</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @guides.each do |guide| %>
-      <tr>
-        <td>                <a href="/guides/<%= guide.id %>">
+<div class="row">
+  <% @guides.each do |guide| %>
+    <div class="col-md-3">
+      <div class="thumbnail">
+            <a href="/guides/<%= guide.id %>">
                     <div class="image-photo" style="background-image: url('<%= guide.image.url %>'); width: 150px; background-size: 100%; height: 150px;">
                     </div>
-                </a>
-        </td>
-        <td><%= guide.description %></td>
-        <td><%= guide.course %></td>
-        <td><%= link_to 'Show', guide %></td>
-        <td><%= link_to 'Edit', edit_guide_path(guide) %></td>
-        <td><%= link_to 'Destroy', guide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            </a>
+        <div class="caption">
+          <h3><%= guide.description %></h3>
+          <p><%= guide.course %></p>
+          <%= link_to 'Show', guide, class: "btn btn-link" %>
+          <%= link_to 'Edit', edit_guide_path(guide), class: "btn btn-link" %>
+          <%= link_to 'Destroy', guide, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 
 <br>
 

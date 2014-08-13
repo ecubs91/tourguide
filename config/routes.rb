@@ -1,4 +1,6 @@
 Tourguide::Application.routes.draw do
+  resources :contacts
+
   resources :guides
 
   get "pages/about"
